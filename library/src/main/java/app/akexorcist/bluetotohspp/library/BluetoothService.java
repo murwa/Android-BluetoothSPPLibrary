@@ -224,7 +224,7 @@ public class BluetoothService {
             BluetoothSocket socket = null;
 
             // Listen to the server socket if we're not connected
-            while (mState != BluetoothState.STATE_CONNECTED && isRunning) {
+            while (mmServerSocket != null && mState != BluetoothState.STATE_CONNECTED && isRunning) {
                 try {
                     // This is a blocking call and will only return on a
                     // successful connection or an exception
